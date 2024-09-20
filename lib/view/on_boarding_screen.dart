@@ -2,6 +2,8 @@ import 'package:coffee/assets/colors.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingScreen extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,26 +36,38 @@ class OnBoardingScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              SizedBox(height: 10,),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Text("Welcome to our cozy coffee corner, where every cup is a delightful for you.", textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.5),
+                    fontSize: 18,
+                    // fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              SizedBox(height: 40,),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 24),
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    print("continue");
+                    Navigator.pushReplacementNamed(context, '/main');
                   },
                   child: const Text(
-                    "Get Start",
+                    "Get Started",
                     style: TextStyle(color: Colors.white),
                   ),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.primary,
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10))),
+                          borderRadius: BorderRadius.circular(15))),
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 40,
               )
             ],
           ),
