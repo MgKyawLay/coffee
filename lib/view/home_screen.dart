@@ -10,6 +10,8 @@ class _HomeScreenState extends State<HomeScreen> {
   String searchQuery = "";
   @override
   Widget build(BuildContext context) {
+    double deviceHeight = MediaQuery.of(context).size.height;
+    double deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
         body: SafeArea(
       child: Stack(
@@ -21,14 +23,19 @@ class _HomeScreenState extends State<HomeScreen> {
             color: AppColors.background,
           ),
           Container(
-            height: MediaQuery.of(context).size.height * 0.6,
+            alignment: Alignment.topLeft,
+            height: deviceHeight * 0.6,
             width: double.infinity,
             color: Colors.white,
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(20, deviceHeight * 0.1, 20, 0),
+              child: CategoryTab(),
+            ),
           ),
           Positioned(
-              top: MediaQuery.of(context).size.height * 0.2,
-              height: MediaQuery.of(context).size.height * 0.19,
-              width: MediaQuery.of(context).size.width,
+              top: deviceHeight * 0.2,
+              height: deviceHeight * 0.19,
+              width: deviceWidth,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Container(
@@ -37,7 +44,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       borderRadius: BorderRadius.circular(10)),
                 ),
               )),
-
         ],
       ),
     ));
