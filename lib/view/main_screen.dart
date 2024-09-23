@@ -15,6 +15,7 @@ class _MainScreenState extends State<MainScreen>{
   @override
   Widget build(BuildContext context) {
    return Scaffold(
+     body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
           onTap: (int index){
@@ -23,13 +24,11 @@ class _MainScreenState extends State<MainScreen>{
             });
           },
           items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: '-', ),
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: '-'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: '-' ),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: '-'),
         // BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
         // BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
-
       ]),
    );
   }
-
 }
