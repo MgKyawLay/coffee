@@ -1,4 +1,5 @@
 import 'package:coffee/assets/colors.dart';
+import 'package:coffee/view/components/ItemGridList.dart';
 import 'package:coffee/view/components/category_tab.dart';
 import 'package:flutter/material.dart';
 
@@ -28,8 +29,13 @@ class _HomeScreenState extends State<HomeScreen> {
             width: double.infinity,
             color: Colors.white,
             child: Padding(
-              padding: EdgeInsets.fromLTRB(20, deviceHeight * 0.1, 20, 0),
-              child: CategoryTab(),
+              padding: EdgeInsets.fromLTRB(20, deviceHeight * 0.12, 20, 0),
+              child: Column(
+                children: [
+                  CategoryTab(),
+                  ItemGridList(),
+                ],
+              ),
             ),
           ),
           Positioned(
