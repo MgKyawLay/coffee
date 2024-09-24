@@ -28,8 +28,10 @@ class ItemDetail extends StatelessWidget {
           ],
         ),
         // bottomSheet: ,
-        body: SingleChildScrollView(
-            child: Stack(
+        body: Stack(
+          children: [
+            SingleChildScrollView(
+                child: Stack(
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -78,8 +80,32 @@ class ItemDetail extends StatelessWidget {
                   ),
                 ),
               ],
+            )),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                height: deviceHeight * 0.13,
+                width: double.infinity,
+                // color: Colors.red,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10))
+                ),
+                child: Padding(padding: EdgeInsets.all(20),
+                child: Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text("data"),
+                        Text("data")
+                      ],
+                    ),
+                    ElevatedButton(onPressed: null, child: Text("data"))
+                  ],
+                )),
+              ),
             )
-        )
-    );
+          ],
+        ));
   }
 }
