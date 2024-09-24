@@ -9,8 +9,8 @@ class SquareButton extends StatelessWidget {
   const SquareButton({
     super.key,
     required this.onPress,
-    required this.size,
     required this.icon,
+    this.size = 35.0,
     this.color = Colors.red,
   });
 

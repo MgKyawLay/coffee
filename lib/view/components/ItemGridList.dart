@@ -10,36 +10,42 @@ class ItemGridList extends StatelessWidget {
                 crossAxisCount: 2, childAspectRatio: 0.7),
             itemCount: 10,
             itemBuilder: (context, index) {
-              return Card(
-                child: 
-                Stack(
-                  children: [
-                    Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            ClipRRect(
-                              child: Image.network(
-                                "https://insanelygoodrecipes.com/wp-content/uploads/2020/07/Cup-Of-Creamy-Coffee-500x500.png",
-                                height: 160,
-                              ),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            Text("data"),
-                            Text("data"),
-                            Text("data"),
-                          ],
-                        )
-                    ),
-                    Positioned(
-                      child: SquareButton(onPress: (){}, size: 35, icon: Icon(Icons.add),),
-                      bottom: 10,
-                      right: 10,
-                    )
-                  ],
-                )
-              );
+              return
+                GestureDetector(
+                  onTap: (){
+                    Navigator.pushNamed(context, '/item_detail');
+                  },
+                  child: Card(
+                      child:
+                      Stack(
+                        children: [
+                          Padding(
+                              padding: EdgeInsets.all(10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  ClipRRect(
+                                    child: Image.network(
+                                      "https://insanelygoodrecipes.com/wp-content/uploads/2020/07/Cup-Of-Creamy-Coffee-500x500.png",
+                                      height: 160,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  Text("data"),
+                                  Text("data"),
+                                  Text("data"),
+                                ],
+                              )
+                          ),
+                          Positioned(
+                            child: SquareButton(onPress: (){}, size: 35, icon: Icon(Icons.add),),
+                            bottom: 10,
+                            right: 10,
+                          )
+                        ],
+                      )
+                  ),
+                );
             }
             )
     );
