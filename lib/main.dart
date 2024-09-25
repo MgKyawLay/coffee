@@ -1,4 +1,5 @@
 import 'package:coffee/assets/colors.dart';
+import 'package:coffee/view/coffee_order_screen.dart';
 import 'package:coffee/view/item_detail.dart';
 import 'package:coffee/view/main_screen.dart';
 import 'package:coffee/view/on_boarding_screen.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/' : (BuildContext context) => OnBoardingScreen(),
         '/main': (BuildContext context) => MainScreen(),
         '/item_detail': (BuildContext context) => ItemDetail(),
+        '/coffee_order': (BuildContext context) => CoffeeOrderScreen()
       },
       title: 'Flutter Demo',
       theme: ThemeData(

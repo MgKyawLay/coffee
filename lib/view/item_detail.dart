@@ -88,11 +88,13 @@ class ItemDetail extends StatelessWidget {
                 width: double.infinity,
                 // color: Colors.red,
                 decoration: BoxDecoration(
-                  color: Colors.red,
+                  color: Colors.white,
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10))
                 ),
                 child: Padding(padding: EdgeInsets.all(20),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Column(
                       children: [
@@ -100,7 +102,16 @@ class ItemDetail extends StatelessWidget {
                         Text("data")
                       ],
                     ),
-                    ElevatedButton(onPressed: null, child: Text("data"))
+                    ElevatedButton(onPressed: (){
+                      Navigator.pushNamed(context, "/coffee_order");},
+                      child: Text("data"),
+                      style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.primary,
+                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)
+                        )
+                    ),)
                   ],
                 )),
               ),
